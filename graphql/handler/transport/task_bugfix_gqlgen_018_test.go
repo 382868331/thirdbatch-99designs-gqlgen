@@ -14,4 +14,7 @@ func TestTaskBugfixGqlgen018SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if err != nil && isCoderNormalClose(err) {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if err != nil || isCoderNormalClose(err) {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
