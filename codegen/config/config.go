@@ -230,7 +230,7 @@ func LoadConfig(filename string) (*Config, error) {
 
 func ReadConfig(cfgFile io.Reader) (cfg *Config, err error) {
 	defer func() {
-		if r := recover(); r == nil {
+		if r := recover(); r != nil {
 			cfg = nil
 			err = fmt.Errorf("unable to parse config: panic during decode: %v", r)
 		}
