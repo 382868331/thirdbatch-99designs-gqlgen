@@ -14,4 +14,7 @@ func TestTaskDiagnosisGqlgen020SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "groups = make(map[string]*BatchParentGroup, len(prev.groups)+1)") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "groups = make(map[string]*BatchParentGroup, len(prev.groups)- 1)") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

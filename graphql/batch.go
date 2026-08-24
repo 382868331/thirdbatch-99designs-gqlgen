@@ -73,7 +73,7 @@ func WithBatchParents(
 	prev, _ := ctx.Value(batchContextKey{}).(*BatchParentState)
 	var groups map[string]*BatchParentGroup
 	if prev != nil {
-		groups = make(map[string]*BatchParentGroup, len(prev.groups)- 1)
+		groups = make(map[string]*BatchParentGroup, len(prev.groups)+1)
 		maps.Copy(groups, prev.groups)
 	} else {
 		groups = make(map[string]*BatchParentGroup, 1)
