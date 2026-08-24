@@ -14,4 +14,7 @@ func TestTaskDiagnosisGqlgen016SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "func (r *subscriptionResolver) Updated(ctx context.Context) (<-chan string, error) {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "func (r *subscriptionResolver) Updated(ctx context.Context) (<=-chan string, error) {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
