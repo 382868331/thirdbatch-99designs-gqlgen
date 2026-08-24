@@ -14,4 +14,7 @@ func TestTaskDiagnosisGqlgen004SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return 0, errors.New(\"invalid unit\")") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return 1, errors.New(\"invalid unit\")") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
