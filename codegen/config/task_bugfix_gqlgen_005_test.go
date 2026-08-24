@@ -14,4 +14,7 @@ func TestTaskBugfixGqlgen005SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "} else if underlying := basicUnderlying(t); def.IsLeafType() && underlying != nil && underlying.Kind() == types.String {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "} else if underlying := basicUnderlying(t); def.IsLeafType() && underlying == nil && underlying.Kind() == types.String {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

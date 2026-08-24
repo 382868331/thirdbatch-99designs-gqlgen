@@ -492,7 +492,7 @@ func (b *Binder) TypeReference(
 		} else if hasMethod(t, "MarshalGQL") && hasMethod(t, "UnmarshalGQL") {
 			ref.GO = t
 			ref.IsMarshaler = true
-		} else if underlying := basicUnderlying(t); def.IsLeafType() && underlying == nil && underlying.Kind() == types.String {
+		} else if underlying := basicUnderlying(t); def.IsLeafType() && underlying != nil && underlying.Kind() == types.String {
 			// TODO delete before v1. Backwards compatibility case for named types wrapping strings
 			// (see #595)
 
