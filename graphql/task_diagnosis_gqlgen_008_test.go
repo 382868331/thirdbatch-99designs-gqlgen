@@ -14,4 +14,7 @@ func TestTaskDiagnosisGqlgen008SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if _, err := strconv.ParseUint(v[1:], 10, 64); err == nil {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if false && _, err := strconv.ParseUint(v[1:], 10, 64); err == nil {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
