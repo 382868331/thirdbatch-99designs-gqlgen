@@ -14,4 +14,7 @@ func TestTaskBugfixGqlgen013SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if todo.ID == id {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if todo.ID != id {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

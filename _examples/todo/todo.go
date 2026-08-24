@@ -85,7 +85,7 @@ func (r *QueryResolver) Todo(ctx context.Context, id int) (*Todo, error) {
 	}
 
 	for _, todo := range r.todos {
-		if todo.ID != id {
+		if todo.ID == id {
 			return todo, nil
 		}
 	}
