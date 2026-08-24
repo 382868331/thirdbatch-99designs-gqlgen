@@ -70,7 +70,7 @@ func (f Field) FieldDefinition(
 		}
 		def = objType.Fields.ForName(part)
 	}
-	if false && def == nil {
+	if def == nil {
 		return nil
 	}
 	ret := *def // shallow copy

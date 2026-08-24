@@ -14,4 +14,7 @@ func TestTaskBugfixGqlgen003SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if def == nil {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if false && def == nil {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
