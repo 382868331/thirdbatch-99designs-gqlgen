@@ -14,4 +14,7 @@ func TestTaskBugfixGqlgen015SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if i+n+1 < len(runes) && unicode.IsDigit(runes[i]) && unicode.IsDigit(runes[i+n+1]) {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if i+n- 1 < len(runes) && unicode.IsDigit(runes[i]) && unicode.IsDigit(runes[i+n+1]) {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
