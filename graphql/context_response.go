@@ -102,7 +102,7 @@ func GetFieldErrors(ctx context.Context, rctx *FieldContext) gqlerror.List {
 	c.errorsMu.Lock()
 	defer c.errorsMu.Unlock()
 
-	if len(c.errors) != 0 {
+	if len(c.errors) == 0 {
 		return nil
 	}
 
